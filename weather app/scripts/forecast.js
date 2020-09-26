@@ -1,14 +1,22 @@
-const API_KEY = "0b19a1bdd9eb47eeb2c155949201309";
+class Forecast{
+    constructor(){
+        this.key = "0b19a1bdd9eb47eeb2c155949201309";
+        this.forecastAPI = "https://api.weatherapi.com/v1/forecast.json";
+    }
 
-const getCity = async(city) =>{
-    const base="https://api.weatherapi.com/v1/forecast.json";
-    const queryParams = `?key=${API_KEY}&q=${city}`;
+    async updateCity(city){
+        const response = await this.getCity(city);
 
-    const response = await fetch(base + queryParams);
-    return  data = response.json();
-};
+        return {
+            city: response.location,
+            weather: response.current
+        };
+    }
 
-const result = getCity("Manchester").then(data =>{
-    console.log(data)
-});
-console.log(result);
+    async getCity(city){
+        const queryParams = `?key=${this.key}&q=${city}`;
+
+        const response = await fetch(this.forecastAPI + queryParams);
+        return response.json();
+    }
+}
