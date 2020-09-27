@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h2>Receipes</h2>
+        <ul>
+        </ul>
+        <form>
+            <label for="receipe">Add new receipe</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="receipe" required>
+                <div class="input-group-append">
+                    <input type="submit" value="add" class="btn btn-outline-secondary">
+                </div>
+            </div>
+            <button class="btn btn-outline-primary my-2">Unscribe from changes</button>
+        </form>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBdk018s5GJZ1xucOCh3sytAJ4GzwJtB6k",
+        authDomain: "learning-modern-javascript.firebaseapp.com",
+        databaseURL: "https://learning-modern-javascript.firebaseio.com",
+        projectId: "learning-modern-javascript",
+        storageBucket: "learning-modern-javascript.appspot.com",
+        messagingSenderId: "786377569039",
+        appId: "1:786377569039:web:c0b2a16a12bc4189fd447a",
+        measurementId: "G-2K68888D8R"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    </script>
+    <script src="sandbox.js"></script>
+</body>
+</html>

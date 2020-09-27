@@ -5,14 +5,6 @@ const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 const forecast = new Forecast();
 
-// const updateCity = async (city)=>{
-//     const response = await getCity(city);
-
-//     return {
-//         city: response.location,
-//         weather: response.current
-//     };
-// }
 
 cityForm.addEventListener('submit',(event)=>{
     event.preventDefault();
